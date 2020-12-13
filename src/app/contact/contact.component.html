@@ -1,0 +1,23 @@
+<div class="containerSend">
+
+  <div class="containerSend__title"> <h2 class="containerSend__title containerSend__title--h2 ">Masz pytanie ? napisz!</h2></div>
+  <form class="containerSend__form" [formGroup]="formContact" (ngSubmit)="onSubmit((formContact.value))">
+  <mat-form-field appearance="fill">
+    <mat-label>Imie</mat-label>
+    <input matInput formControlName="controlName">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput  formControlName="controlEmail">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill" class="containerSend__form">
+    <mat-label>Wiadomość</mat-label>
+    <textarea  class="containerSend__form containerSend__form--textarea" matInput
+     formControlName="controlMessage"></textarea>
+  </mat-form-field>
+
+  <button  mat-raised-button color="accent" type="submit" [disabled]="!formContact.valid"> Wyślij</button>
+</form>
+</div>

@@ -1,0 +1,44 @@
+.cont-exchange
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20vh;
+
+
+  .form
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  mat-form-field
+  {
+    margin: .5vw;
+  }
+
+  .score
+  {
+    margin: 0.2vh;
+    font-size: 2.5rem;
+    text-decoration: underline;
+  }
+
+
+  &__errorInput
+{
+  padding-top: 5vw;
+  &--errorInput
+  {
+ text-align: center;
+ color: rgb(219, 53, 53);
+ padding: 4px;
+ border: 0.2vw solid rgb(218, 35, 35) ;
+ border-radius: 6px;
+ width: 20vw;
+  }
+}
+
+
+}

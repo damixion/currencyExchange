@@ -1,0 +1,32 @@
+.containerSend
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5vw;
+
+  &__title
+  {
+    text-align: center;
+
+    &--h2
+    {
+      font-style: italic;
+    }
+
+  }
+  &__form
+  {
+    width: 30vw;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+    &--textarea
+    {
+     font-style: italic;
+    }
+  }
+
+}

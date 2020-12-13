@@ -1,0 +1,24 @@
+.navigation {
+
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+
+  mat-chip {
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+  cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+
+    &:hover
+    {
+      text-decoration: underline;
+    }
+  }
+
+}

@@ -1,0 +1,44 @@
+<div class="cont-exchange">
+  <div class="from">
+  <div class="have">
+    <mat-form-field >
+      <mat-label>Mam </mat-label>
+      <input  #inpHave="ngModel" matInput placeholder="Mam" type="number" [(ngModel)]="inputHave" required >
+
+    </mat-form-field>
+
+
+  <mat-form-field >
+    <mat-label>Waluta</mat-label>
+    <mat-select  [(ngModel)]="selectHave">
+      <mat-option  *ngFor="let currencyRate of rateFull" [value]=currencyRate.mid>{{currencyRate.code}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+
+  <div class="want">
+  <mat-form-field >
+    <mat-label>Chcę</mat-label>
+    <input matInput placeholder="Chcę"  type="number" [(ngModel)]="inputWant" >
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>Waluta</mat-label>
+    <mat-select [(ngModel)]="selectWant">
+      <mat-option  *ngFor="let currencyRate of rateFull" [value]=currencyRate.mid >{{currencyRate.code}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+</div>
+
+<button mat-stroked-button color="primary"  (click)="calculate()">Przelicz</button>
+<div class="score" > {{result}}</div>
+
+
+<div class="cont-exchange__errorInput" *ngIf="inpHave.invalid && (inpHave.dirty || inpHave.touched)">
+  <div class="cont-exchange__errorInput cont-exchange__errorInput--errorInput" *ngIf="inpHave.errors.required">Pole 'mam' jest wymagane</div>
+</div>
+
+</div>
+
+
