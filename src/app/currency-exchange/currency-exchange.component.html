@@ -11,7 +11,9 @@
   <mat-form-field >
     <mat-label>Waluta</mat-label>
     <mat-select  [(ngModel)]="selectHave">
-      <mat-option  *ngFor="let currencyRate of rateFull" [value]=currencyRate.mid>{{currencyRate.code}}</mat-option>
+      <mat-option  *ngFor="let currencyRate of rateFull" [value]=currencyRate.mid>{{currencyRate.code}}
+        <div [ngClass]="classFlags + currencyRate.code.toLowerCase()"></div>
+      </mat-option>
     </mat-select>
   </mat-form-field>
   </div>
@@ -19,13 +21,15 @@
   <div class="want">
   <mat-form-field >
     <mat-label>Chcę</mat-label>
-    <input matInput placeholder="Chcę"  type="number" [(ngModel)]="inputWant" >
+    <input matInput placeholder="Chcę"  type="number" [(ngModel)]="inputWant" [disabled]="true" >
   </mat-form-field>
-
   <mat-form-field >
     <mat-label>Waluta</mat-label>
     <mat-select [(ngModel)]="selectWant">
-      <mat-option  *ngFor="let currencyRate of rateFull" [value]=currencyRate.mid >{{currencyRate.code}}</mat-option>
+      <mat-option  *ngFor="let currencyRate of rateFull" [value]=currencyRate.mid >
+        {{currencyRate.code}}
+        <div [ngClass]="classFlags + currencyRate.code.toLowerCase()"></div>
+      </mat-option>
     </mat-select>
   </mat-form-field>
 </div>
@@ -38,6 +42,8 @@
 <div class="cont-exchange__errorInput" *ngIf="inpHave.invalid && (inpHave.dirty || inpHave.touched)">
   <div class="cont-exchange__errorInput cont-exchange__errorInput--errorInput" *ngIf="inpHave.errors.required">Pole 'mam' jest wymagane</div>
 </div>
+
+
 
 </div>
 

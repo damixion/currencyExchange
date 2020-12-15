@@ -19,6 +19,9 @@ export class CurrencyTableComponent implements OnInit {
   flagMore = false;
   btnMore = 'Więcej';
 
+  classFlags='currency-flag currency-flag-';
+
+
   constructor(private cRate: DataNbpService) { }
   ngOnInit(): void { this.get(); }
 

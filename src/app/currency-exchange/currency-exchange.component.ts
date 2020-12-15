@@ -19,7 +19,9 @@ export class CurrencyExchangeComponent implements OnInit {
   selectWant = '';
   result = '';
 
-  ngOnInit(): void {this.get();  this.rateFull.push({currency: 'Złotówka', code: 'ZŁ', mid: 1}); }
+  classFlags='currency-flag currency-flag-';
+
+  ngOnInit(): void {this.get();  this.rateFull.push({currency: 'Złotówka', code: 'PLN', mid: 1}); }
 
   get(): void
   {
